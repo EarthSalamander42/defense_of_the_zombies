@@ -1,0 +1,19 @@
+# Cache crap that Valve autogenerates
+*.bin
+*.cfg
+*.soc
+*.tmp
+
+#Github dump
+*.stackdump
+
+game/dota_addons/dota_imba_reborn/network_measurement\.txt
+game/dota_addons/dota_imba_reborn/rich_presence_persistent_data\.txt
+
+game/dota_addons/dota_imba_reborn/server_log\.txt
+
+# eclipse
+.project
+.settings
+.DS_Store
+.idea

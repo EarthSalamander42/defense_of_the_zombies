@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	"winter"
+	{
+		"MaxPlayers"		"4"
+	}
+	"hero_picker"
+	{
+		"background_map"		"scenes/darkmoon_hero_pick"
+	}
+}
