@@ -2,8 +2,13 @@
 {
 	"winter"
 	{
-		"MaxPlayers"		"4"
+		"MaxPlayers"		"5"
 	}
+	"dotaz2ombiemap"
+	{
+		"MaxPlayers"		"5"
+	}
+	
 	"hero_picker"
 	{
 		"background_map"		"scenes/darkmoon_hero_pick"
