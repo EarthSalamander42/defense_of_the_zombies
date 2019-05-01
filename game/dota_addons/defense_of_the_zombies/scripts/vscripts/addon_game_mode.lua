@@ -606,7 +606,7 @@ function CHoldoutGameMode:OnNPCSpawned( event )
 
 	if spawnedUnit:IsCreature() then
 		spawnedUnit:SetHPGain( spawnedUnit:GetMaxHealth() * 0.3 ) -- LEVEL SCALING VALUE FOR HP
-		spawnedUnit:SetManaGain( 0 )
+		spawnedUnit:SetManaGain( 0 )	
 		spawnedUnit:SetHPRegenGain( 0 )
 		spawnedUnit:SetManaRegenGain( 0 )
 		if spawnedUnit:IsRangedAttacker() then
@@ -711,8 +711,7 @@ function CHoldoutGameMode:ComputeTowerBonusGold( nTowersTotal, nTowersStanding )
 	local nRewardPerTower = self._nTowerRewardAmount + self._nTowerScalingRewardPerRound * ( self._nRoundNumber - 1 )
 	return nRewardPerTower * nTowersStanding
 end
-
--- Leveling/gold data for console command "holdout_test_round"
+USE_UNSEEN_FOG_OF_WAR = true
 XP_PER_LEVEL_TABLE = {
 	0,-- 1
 	200,-- 2
@@ -741,7 +740,7 @@ XP_PER_LEVEL_TABLE = {
 	27500 -- 25
 }
 
-STARTING_GOLD = 625
+STARTING_GOLD = 1500
 ROUND_EXPECTED_VALUES_TABLE = 
 {
 	{ gold = STARTING_GOLD, xp = 0 }, -- 1
