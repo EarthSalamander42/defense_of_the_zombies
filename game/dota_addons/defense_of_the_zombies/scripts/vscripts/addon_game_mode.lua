@@ -30,6 +30,8 @@ SPEECH_COOLDOWN = 3.0
 
 -- Precache resources
 function Precache( context )
+	LinkLuaModifier("modifier_player_visible", "modifiers/modifier_player_visible.lua", LUA_MODIFIER_MOTION_NONE )
+
 	PrecacheItemByNameSync( "item_tombstone", context )
 	PrecacheItemByNameSync( "item_bag_of_gold", context )
 	PrecacheItemByNameSync( "item_health_potion", context )
@@ -622,8 +624,9 @@ function CHoldoutGameMode:OnNPCSpawned( event )
 		spawnedUnit:SetBountyGain( 0 )
 		spawnedUnit:SetXPGain( 0 )
 		spawnedUnit:CreatureLevelUp( GameRules:GetCustomGameDifficulty() )
+	elseif spawnedUnit:IsRealHero() then
+		spawnedUnit:AddNewModifier(spawnedUnit, nil, "modifier_player_visible", {})
 	end
-
 end
 
 
