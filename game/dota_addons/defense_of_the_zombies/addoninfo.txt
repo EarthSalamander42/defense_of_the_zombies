@@ -1,10 +1,6 @@
 "AddonInfo"
 {
-	"winter"
-	{
-		"MaxPlayers"		"5"
-	}
-	"dotaz2ombiemap"
+	"dota2zombiemap"
 	{
 		"MaxPlayers"		"5"
 	}
