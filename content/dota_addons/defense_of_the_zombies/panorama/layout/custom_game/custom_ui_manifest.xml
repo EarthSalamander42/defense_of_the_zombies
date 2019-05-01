@@ -16,6 +16,24 @@
 		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_6] = "#1bc0d8;";
 		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_7] = "#c7e40d;";
 		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_8] = "#8c2af4;";
+		
+		HidePickScreen();
+
+		function HidePickScreen() {
+			var PreGame = $.GetContextPanel().GetParent().GetParent().FindChildTraverse("PreGame")
+
+			if (!Game.GameStateIs(3)) {
+				if (PreGame) {
+					PreGame.style.opacity = "0";
+				}
+
+				$.Schedule(0.25, HidePickScreen)
+			}
+			else {
+				if (PreGame)
+					PreGame.style.opacity = "1";
+			}
+		}
 	</script> 
 
 	<Panel>
