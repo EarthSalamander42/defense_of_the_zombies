@@ -394,9 +394,11 @@ function CHoldoutGameMode:_RoundFinished()
 	-- Heal all players
 	self:_RefreshPlayers()
 
-	-- Heal ancient
-	self._hAncient:SetHealth( self._hAncient:GetMaxHealth() )
-	--self._hAncient:SetInvulnCount( self.nAncientInvulnerabilityCount )
+	if self._hAncient then
+		-- Heal ancient
+		self._hAncient:SetHealth( self._hAncient:GetMaxHealth() )
+		--self._hAncient:SetInvulnCount( self.nAncientInvulnerabilityCount )
+	end
 
 	-- Respawn all buildings
 	self:_RespawnBuildings()
@@ -513,7 +515,8 @@ function CHoldoutGameMode:_CheckForDefeat()
 		end
 	end
 
-	if bAllPlayersDead or not self._hAncient or self._hAncient:GetHealth() <= 1 then
+--	if bAllPlayersDead or not self._hAncient or self._hAncient:GetHealth() <= 1 then
+	if bAllPlayersDead then
 		if self._nGameEndState == NOT_ENDED then
 			self:_Defeated()
 		end

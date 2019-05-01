@@ -21,12 +21,12 @@ function CHoldoutGameMode:_SendRoundDataToClient()
 		netTable["enemies_killed"] = self._currentRound:GetTotalUnitsKilled()
 		netTable["enemies_total"] = self._currentRound:GetTotalUnits()
 
-		local nAncientHealth = self._hAncient:GetHealth()
-		if nAncientHealth ~= self._hAncient:GetMaxHealth() then
-			netTable["ancient_hp"] = nAncientHealth
-		else
-			netTable["ancient_hp"] = -1
-		end
+--		local nAncientHealth = self._hAncient:GetHealth()
+--		if nAncientHealth ~= self._hAncient:GetMaxHealth() then
+--			netTable["ancient_hp"] = nAncientHealth
+--		else
+--			netTable["ancient_hp"] = -1
+--		end
 
 		netTable["invoker_hp"] = 0;
 		if self:HasBossSpawned() and not self:HasBossDied() then
@@ -202,7 +202,7 @@ function CHoldoutGameMode:_ChoseExitGame()
 
 
 	if self._nGameEndState == DEFEATED then
-		if not self._hAncient:IsNull() and self._hAncient:IsAlive() then
+		if self._hAncient and not self._hAncient:IsNull() and self._hAncient:IsAlive() then
 			self._hAncient:RemoveAbility( "ability_ancient_buddha" )
 			self._hAncient:RemoveModifierByName( "buddha" )
 		end
